@@ -1,24 +1,24 @@
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 function escapeHtml(str: string): string {
   return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 const BRAND = {
-  name: 'Grace &amp; Faith R&amp;D',
-  shortName: 'GFRND',
-  tagline: 'Innovation Lab',
-  website: 'https://www.gfrnd.com',
-  email: 'contact@gfrnd.com',
-  blue: '#2563eb',
-  green: '#10b981',
-  dark: '#0f172a',
+  name: "Grace &amp; Faith R&amp;D",
+  shortName: "GFRND",
+  tagline: "Innovation Lab",
+  website: "https://www.gfrnd.com",
+  email: "contact@gfrnd.com",
+  blue: "#2563eb",
+  green: "#10b981",
+  dark: "#0f172a",
 };
 
 function headerBlock(title: string, subtitle: string) {
@@ -44,7 +44,7 @@ function headerBlock(title: string, subtitle: string) {
                     </table>
                   </td>
                   <td align="right">
-                    <a href="${BRAND.website}" style="font-family:Arial,sans-serif;font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;">${BRAND.website.replace('https://', '')}</a>
+                    <a href="${BRAND.website}" style="font-family:Arial,sans-serif;font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;">${BRAND.website.replace("https://", "")}</a>
                   </td>
                 </tr>
               </table>
@@ -69,7 +69,7 @@ function footerBlock() {
                 <tr>
                   <td>
                     <p style="margin:0 0 4px;font-family:Arial,sans-serif;font-size:13px;font-weight:700;color:#ffffff;">${BRAND.name}</p>
-                    <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;color:#64748b;">${BRAND.tagline} &nbsp;·&nbsp; <a href="${BRAND.website}" style="color:${BRAND.green};text-decoration:none;">${BRAND.website.replace('https://', '')}</a></p>
+                    <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;color:#64748b;">${BRAND.tagline} &nbsp;·&nbsp; <a href="${BRAND.website}" style="color:${BRAND.green};text-decoration:none;">${BRAND.website.replace("https://", "")}</a></p>
                   </td>
                   <td align="right">
                     <a href="mailto:${BRAND.email}" style="font-family:Arial,sans-serif;font-size:12px;color:#64748b;text-decoration:none;">${BRAND.email}</a>
@@ -92,30 +92,40 @@ function footerBlock() {
     </tr>`;
 }
 
-function infoRow(label: string, value: string, isLink = false, href = '') {
+function infoRow(label: string, value: string, isLink = false, href = "") {
   return `
     <tr>
       <td style="padding:14px 0;border-bottom:1px solid #f1f5f9;vertical-align:top;width:110px;">
         <span style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.8px;">${label}</span>
       </td>
       <td style="padding:14px 0 14px 16px;border-bottom:1px solid #f1f5f9;vertical-align:top;">
-        ${isLink
-          ? `<a href="${href}" style="font-family:Arial,sans-serif;font-size:14px;color:${BRAND.blue};text-decoration:none;font-weight:500;">${value}</a>`
-          : `<span style="font-family:Arial,sans-serif;font-size:14px;color:#1e293b;font-weight:500;">${value}</span>`
+        ${
+          isLink
+            ? `<a href="${href}" style="font-family:Arial,sans-serif;font-size:14px;color:${BRAND.blue};text-decoration:none;font-weight:500;">${value}</a>`
+            : `<span style="font-family:Arial,sans-serif;font-size:14px;color:#1e293b;font-weight:500;">${value}</span>`
         }
       </td>
     </tr>`;
 }
 
-function buildInternalEmail(safeName: string, safeEmail: string, safeCompany: string, safeMessage: string) {
-  const now = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'long', timeStyle: 'short' });
+function buildInternalEmail(
+  safeName: string,
+  safeEmail: string,
+  safeCompany: string,
+  safeMessage: string,
+) {
+  const now = new Date().toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    dateStyle: "long",
+    timeStyle: "short",
+  });
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>New Enquiry</title></head>
 <body style="margin:0;padding:0;background:#f8fafc;">
   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f8fafc;padding:32px 16px;">
-    ${headerBlock('New Enquiry Received', `Submitted on ${now} IST`)}
+    ${headerBlock("New Enquiry Received", `Submitted on ${now} IST`)}
     <tr>
       <td align="center" style="padding:0;">
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;">
@@ -132,9 +142,9 @@ function buildInternalEmail(safeName: string, safeEmail: string, safeCompany: st
                 <tr>
                   <td style="padding:0 24px 16px;">
                     <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                      ${infoRow('Name', safeName)}
-                      ${infoRow('Email', safeEmail, true, `mailto:${safeEmail}`)}
-                      ${infoRow('Company', safeCompany || '—')}
+                      ${infoRow("Name", safeName)}
+                      ${infoRow("Email", safeEmail, true, `mailto:${safeEmail}`)}
+                      ${infoRow("Company", safeCompany || "—")}
                     </table>
                   </td>
                 </tr>
@@ -175,7 +185,7 @@ function buildConfirmationEmail(safeName: string) {
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>We got your message</title></head>
 <body style="margin:0;padding:0;background:#f8fafc;">
   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f8fafc;padding:32px 16px;">
-    ${headerBlock(`Thank you, ${safeName}!`, 'We\'ve received your message and will be in touch shortly.')}
+    ${headerBlock(`Thank you, ${safeName}!`, "We've received your message and will be in touch shortly.")}
     <tr>
       <td align="center" style="padding:0;">
         <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;">
@@ -268,43 +278,43 @@ export async function POST(request: NextRequest) {
 
     if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return NextResponse.json(
-        { error: 'Name, email and message are required.' },
-        { status: 400 }
+        { error: "Name, email and message are required." },
+        { status: 400 },
       );
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: 'Please provide a valid email address.' },
-        { status: 400 }
+        { error: "Please provide a valid email address." },
+        { status: 400 },
       );
     }
 
-    const safeName    = escapeHtml(String(name).trim());
-    const safeEmail   = escapeHtml(String(email).trim());
-    const safeCompany = escapeHtml(String(company ?? '').trim());
+    const safeName = escapeHtml(String(name).trim());
+    const safeEmail = escapeHtml(String(email).trim());
+    const safeCompany = escapeHtml(String(company ?? "").trim());
     const safeMessage = escapeHtml(String(message).trim());
 
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
-      console.error('SMTP credentials not configured.');
+      console.error("SMTP credentials not configured.");
       return NextResponse.json(
-        { error: 'Mail service is not configured. Please contact us directly.' },
-        { status: 503 }
+        {
+          error: "Mail service is not configured. Please contact us directly.",
+        },
+        { status: 503 },
       );
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST ?? 'smtpout.secureserver.net',
-      port: Number(process.env.EMAIL_PORT ?? 465),
-      secure: true,
+      host: process.env.EMAIL_HOST ?? "smtp.office365.com",
+      port: Number(process.env.EMAIL_PORT ?? 587),
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,
       },
     });
-
-    await transporter.verify();
 
     // Internal notification to the team
     await transporter.sendMail({
@@ -313,7 +323,7 @@ export async function POST(request: NextRequest) {
       replyTo: safeEmail,
       subject: `New enquiry from ${safeName}`,
       html: buildInternalEmail(safeName, safeEmail, safeCompany, safeMessage),
-      text: `New Enquiry\n\nName: ${safeName}\nEmail: ${safeEmail}\nCompany: ${safeCompany || '—'}\n\nMessage:\n${safeMessage}`,
+      text: `New Enquiry\n\nName: ${safeName}\nEmail: ${safeEmail}\nCompany: ${safeCompany || "—"}\n\nMessage:\n${safeMessage}`,
     });
 
     // Auto-reply confirmation to the sender
@@ -326,30 +336,39 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json(
-      { message: "Your message has been sent. We'll be in touch within 24 hours." },
-      { status: 200 }
+      {
+        message:
+          "Your message has been sent. We'll be in touch within 24 hours.",
+      },
+      { status: 200 },
     );
   } catch (error: unknown) {
-    console.error('Contact form error:', error);
+    console.error("Contact form error:", error);
 
     const err = error as { code?: string; responseCode?: number };
 
-    if (err.code === 'EAUTH' || err.responseCode === 535) {
+    if (err.code === "EAUTH" || err.responseCode === 535) {
       return NextResponse.json(
-        { error: 'Mail authentication failed. Please contact us directly at contact@gfrnd.com.' },
-        { status: 502 }
+        {
+          error:
+            "Mail authentication failed. Please contact us directly at contact@gfrnd.com.",
+        },
+        { status: 502 },
       );
     }
-    if (err.code === 'ECONNECTION' || err.code === 'ETIMEDOUT') {
+    if (err.code === "ECONNECTION" || err.code === "ETIMEDOUT") {
       return NextResponse.json(
-        { error: 'Could not reach mail server. Please try again later.' },
-        { status: 502 }
+        { error: "Could not reach mail server. Please try again later." },
+        { status: 502 },
       );
     }
 
     return NextResponse.json(
-      { error: 'Something went wrong. Please try again or email us directly at contact@gfrnd.com.' },
-      { status: 500 }
+      {
+        error:
+          "Something went wrong. Please try again or email us directly at contact@gfrnd.com.",
+      },
+      { status: 500 },
     );
   }
 }
