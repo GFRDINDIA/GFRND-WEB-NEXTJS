@@ -68,7 +68,7 @@ const cards: ServiceCard[] = [
     slug: 'enterprise-ai-consulting',
     description: 'Deploy Claude Enterprise for corporates — SSO, RBAC, audit logs, custom MCP integrations, and managed service.',
     pricing: '₹2–10L project + managed retainer',
-    highlight: 'Anthropic Claude Partner Network',
+    highlight: "Built on Anthropic's Claude API",
     color: 'from-teal-600 to-green-600',
   },
   {
@@ -202,7 +202,7 @@ const ClaudeAIServices: React.FC = () => {
             Ready to build with Claude AI?
           </h3>
           <p className="text-white/80 text-base mb-8 max-w-xl mx-auto">
-            GFRD is Gujarat&apos;s Claude AI implementation partner. Let&apos;s discuss which service line fits your business best — starting with a free 30-day pilot.
+            GFRD is a Gujarat-based Claude AI implementation specialist. Let&apos;s discuss which service line fits your business best — starting with a free 30-day pilot.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button

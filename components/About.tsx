@@ -72,8 +72,8 @@ const About: React.FC = () => {
             <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-green-500 rounded-full mb-6" />
             <p className="text-base text-gray-600 mb-5 leading-relaxed text-justify">
               We bridge the gap between research and real-world applications by building intelligent,
-              scalable, and sustainable solutions. Our team of experts combines cutting-edge research
-              with practical implementation to drive meaningful innovation.
+              scalable, and sustainable solutions. As an AI-native firm, we combine cutting-edge
+              research with practical implementation to drive meaningful innovation.
             </p>
             <p className="text-base text-gray-600 leading-relaxed text-justify">
               From AI-powered solutions to edge computing innovations, we&apos;re committed to creating
@@ -92,8 +92,8 @@ const About: React.FC = () => {
               <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-4">
                 <Users className="h-5 w-5" />
               </div>
-              <h4 className="text-lg font-bold mb-1">Expert Team</h4>
-              <p className="text-blue-100 text-sm leading-relaxed">Multidisciplinary researchers and engineers</p>
+              <h4 className="text-lg font-bold mb-1">AI-Native Firm</h4>
+              <p className="text-blue-100 text-sm leading-relaxed">Senior-calibre delivery across 24 disciplines, one accountable founder</p>
             </div>
             <div className="bg-gradient-to-br from-green-600 to-green-700 p-5 rounded-2xl text-white shadow-lg">
               <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-4">

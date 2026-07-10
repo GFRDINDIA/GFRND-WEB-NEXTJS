@@ -75,8 +75,8 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'contact@gfrnd.com',
-      link: 'mailto:contact@gfrnd.com',
+      content: 'gfrdindia@gmail.com',
+      link: 'mailto:gfrdindia@gmail.com',
       color: 'from-blue-600 to-blue-700'
     },
     {

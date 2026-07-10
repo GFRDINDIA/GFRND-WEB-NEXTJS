@@ -316,10 +316,10 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Internal notification to the team
+    // Internal notification to the team (Owner inbox — also swept daily by the lead-sweep task)
     await transporter.sendMail({
       from: `"GFRND Website" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
+      to: process.env.CONTACT_INBOX ?? "gfrdindia@gmail.com",
       replyTo: safeEmail,
       subject: `New enquiry from ${safeName}`,
       html: buildInternalEmail(safeName, safeEmail, safeCompany, safeMessage),

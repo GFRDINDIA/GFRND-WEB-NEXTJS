@@ -54,8 +54,8 @@ const guarantees: Guarantee[] = [
   },
   {
     icon: HeartPulse,
-    title: 'HIPAA-Ready for Healthcare',
-    description: 'Available via Anthropic Sales team — enables GFRD to serve healthcare clients with required data protection guarantees.',
+    title: 'Healthcare-Grade Discipline',
+    description: 'DPDP-compliant handling of sensitive records — PII scrubbed before any AI call, encrypted storage, and full audit trails.',
     color: 'from-red-600 to-pink-600',
   },
   {

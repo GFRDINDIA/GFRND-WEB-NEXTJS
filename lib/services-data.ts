@@ -98,7 +98,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     useCases: [
       { industry: 'Logistics', example: 'Real-time shipment tracking pipeline processing 2M events per hour.' },
-      { industry: 'Healthcare', example: 'HIPAA-compliant data lake unifying EHR, imaging, and claims data.' },
+      { industry: 'Healthcare', example: 'Secure data lake unifying EHR, imaging, and claims data with strict access controls and audit trails.' },
       { industry: 'Smart Cities', example: 'IoT sensor data ingestion and processing for traffic management.' },
       { industry: 'Retail', example: 'Near-real-time sales dashboard replacing overnight batch reports.' },
     ],
@@ -582,20 +582,20 @@ export const servicesData: ServiceDetail[] = [
     name: 'Enterprise AI Consulting & Deployment',
     category: 'Claude AI Services',
     categoryColor: 'from-violet-600 to-purple-600',
-    tagline: 'Position your organisation at the frontier of enterprise AI with GFRD as your implementation partner.',
+    tagline: 'Position your organisation at the frontier of enterprise AI with GFRD as your implementation specialist.',
     overview:
-      'GFRD is positioned to become Gujarat\'s leading Claude AI implementation partner. We deploy, configure, and manage Claude Enterprise for corporate clients — handling everything from SSO integration and RBAC setup to staff training, custom MCP integrations, and ongoing managed service contracts. For companies that want enterprise-grade AI with full governance, compliance, and support, GFRD is the end-to-end partner.',
+      'GFRD is positioned to become Gujarat\'s leading Claude AI implementation specialist. We deploy, configure, and manage Claude Enterprise for corporate clients — handling everything from SSO integration and RBAC setup to staff training, custom MCP integrations, and ongoing managed service contracts. For companies that want enterprise-grade AI with full governance, compliance, and support, GFRD delivers end to end.',
     features: [
       { title: 'Claude Enterprise Deployment', description: 'Full deployment and configuration of Claude Enterprise — SSO, SCIM, RBAC, audit logs, and compliance API setup.' },
       { title: 'Custom MCP Integrations', description: 'Connect Claude to your existing CRM, ERP, HR systems, Tally, and business tools through custom MCP connectors.' },
       { title: 'Staff Training & Onboarding', description: 'Structured AI onboarding programmes teaching your teams to use Claude effectively and responsibly.' },
       { title: 'Governance Framework Design', description: 'Define AI usage policies, approval workflows, and access controls aligned with your compliance requirements.' },
       { title: 'Managed Service Contracts', description: 'GFRD monitors, maintains, and optimises your Claude deployment — clients get AI value without managing infrastructure.' },
-      { title: 'Claude Partner Network Access', description: 'As an Anthropic partner, GFRD provides co-selling support, technical resources, and preferential enterprise pricing.' },
+      { title: 'Deep Anthropic Platform Expertise', description: 'GFRD tracks Claude models, features, and pricing daily — deployments built on current platform capability, never stale documentation.' },
     ],
     useCases: [
       { industry: 'Banking', example: 'Claude Enterprise deployed for 200-seat bank with full audit trail, RBAC by department, and Finacle ERP integration.' },
-      { industry: 'Hospital', example: 'HIPAA-ready Claude deployment for hospital system with patient data PII scrubbing and role-based access by ward.' },
+      { industry: 'Hospital', example: 'Claude deployment for a hospital system with patient-data PII scrubbing before any AI call and role-based access by ward.' },
       { industry: 'Manufacturing', example: 'Claude integrated with SAP and quality management system — procurement and QA teams using AI daily.' },
       { industry: 'Government', example: 'Compliant AI deployment for state agency with Indian data residency, audit logs, and custom retention policies.' },
     ],
@@ -603,7 +603,7 @@ export const servicesData: ServiceDetail[] = [
       'Enterprise-grade AI governance meeting DPDP Act and sector-specific compliance requirements',
       'Data residency in India (GCP Mumbai) — data never leaves Indian borders',
       'Predictable managed service billing replacing unpredictable in-house AI costs',
-      'Anthropic partner-level access to enterprise pricing and technical support',
+      'Hands-on Anthropic platform expertise — model selection, pricing optimisation, and technical support',
     ],
   },
   {
